@@ -2,17 +2,17 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="bg-[rgb(18_39_87/98%)] text-white">
-      <div className="max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-12 items-center">
-        
+    <section className="pt-32 pb-24">
+      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
         {/* Left Content */}
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight text-[rgb(18_39_87/98%)]">
             Connecting Alumni <br />
             Inspiring Future Generations
           </h1>
 
-          <p className="mt-6 text-lg text-gray-200 max-w-lg">
+          <p className="mt-6 text-lg text-gray-600 max-w-lg">
             Welcome to the official alumni network of our institute. 
             Stay connected with fellow graduates, explore achievements, 
             and contribute to the growth of future students.
@@ -28,7 +28,7 @@ export default function Hero() {
 
             <Link
               href="#contact"
-              className="border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-[rgb(18_39_87/98%)] transition"
+              className="border border-[rgb(18_39_87/98%)] text-[rgb(18_39_87/98%)] px-6 py-3 rounded-lg hover:bg-[rgb(18_39_87/98%)] hover:text-white transition"
             >
               Contact Us
             </Link>

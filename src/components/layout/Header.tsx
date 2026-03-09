@@ -1,42 +1,25 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
-    <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[rgb(18_39_87/98%)] shadow-md"
-          : "bg-transparent"
-      } text-white`}
-    >
+    <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/70 border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
         {/* Logo */}
-        <Link href="/" className="text-xl font-bold">
+        <Link
+          href="/"
+          className="text-xl font-bold text-[rgb(18_39_87/98%)]"
+        >
           Alumni Network
         </Link>
 
         {/* Desktop Menu */}
-        <nav className="hidden md:flex gap-8 font-medium">
+        <nav className="hidden md:flex gap-8 font-medium text-gray-700">
           <a href="#about-us" className="hover:text-[#f59e0b]">About</a>
           <a href="#giving-back" className="hover:text-[#f59e0b]">Giving Back</a>
           <a href="#alumni-directory" className="hover:text-[#f59e0b]">Alumni</a>
@@ -46,7 +29,7 @@ export default function Header() {
 
         {/* Mobile Button */}
         <button
-          className="md:hidden text-2xl"
+          className="md:hidden text-2xl text-[rgb(18_39_87/98%)]"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           ☰
@@ -55,8 +38,8 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-[rgb(18_39_87/98%)] border-t border-white/20">
-          <nav className="flex flex-col px-6 py-4 gap-4">
+        <div className="md:hidden bg-white border-t border-gray-200">
+          <nav className="flex flex-col px-6 py-4 gap-4 text-gray-700">
             <a href="#about-us" onClick={() => setMenuOpen(false)}>About</a>
             <a href="#giving-back" onClick={() => setMenuOpen(false)}>Giving Back</a>
             <a href="#alumni-directory" onClick={() => setMenuOpen(false)}>Alumni</a>
