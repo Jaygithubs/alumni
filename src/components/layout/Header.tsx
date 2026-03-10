@@ -15,7 +15,7 @@ export default function Header() {
           href="/"
           className="text-xl font-bold text-[rgb(18_39_87/98%)]"
         >
-          <img src="/Logo ashoka.png" alt="logo" className="h-20 w-auto" />
+          <img src="/Logo ashoka.png" alt="logo" className="h-16 w-auto" />
         </Link>
 
         {/* Desktop Menu */}
